@@ -196,18 +196,45 @@ echo "==========================================================================
 echo "<h2>Exercício Prático</h2>";
 
 // Função para calcular média de notas
-function media($listNumbers) {
-    $soma = 0;
-    foreach ($listNumbers as [$listNumbers]) {
-        $soma += $listNumbers;
-        echo $soma;
+
+function mediaAlunos($listAlunos) {
+
+    foreach ($listAlunos as $aluno) {
+        $nota = $aluno['notas'];
+        $nome = $aluno['nome'];
+        $soma = 0;
+        $quantidade = count($nota);
+
+        foreach ($nota as $number) {
+            $soma += $number;
+        }
+        $media = $soma / $quantidade;
+        
+    $mediaAluno = number_format($media, 1, ',', '.');
+    
+    $cores = [
+        "exelente" => "blue",
+        "aprovado" => "green",
+        "recuperacao" => "orange",
+        "reprovado" => "red"
+    ];
+
+    if ($media >= 9 && $media <= 10) {
+        $avaliacao = "exelente";
+    } elseif ($media >= 7 && $media < 9) {
+        $avaliacao = "aprovado";
+    } elseif ($media >= 6 && $media < 7) {
+        $avaliacao = "recuperacao";
+    } elseif ($media < 6 && $media >= 0) {
+        $avaliacao = "reprovado";
+    } 
+
+    $cor = $cores[$avaliacao];
+    
+    echo "$nome - Media - <span style='color: $cor'>$mediaAluno ($avaliacao)</span>";
+    echo "<br>";
     }
-
-
 }
-
-// 6º Digitação (Aqui)
-
 
 // Criando um array com alunos e notas
 $turma = [
@@ -220,7 +247,7 @@ $turma = [
 
 // Exibindo os resultados
 
-echo media($turma['notas']);
+echo mediaAlunos($turma);
 
 // 7º Digitação (Aqui)
 ?>
