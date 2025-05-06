@@ -4,10 +4,13 @@
 // ==========================================
 
 // Funções para manipular os dados
+function comer($comida) {
+    return ($comida > 0) ? $comida - 1 : 0;                                                                        
+}
 
-
-// 1ª Digitação (Aqui)
-
+function dormir() {
+    return true;
+}
 
 // Criando vários cachorros
 $cachorros = [
@@ -22,8 +25,9 @@ $cachorros = [
 
 // Manipulando os cachorros
 
-
-// 2ª Digitação (Aqui)
+foreach ($cachorros as $key => $cachorro) {
+    $cachorros[$key]['comida'] = comer($cachorros[$key]['comida']);
+}
 
 
 // Exibindo os resultados no navegador
@@ -35,6 +39,7 @@ echo "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 echo "    <title>Resultados dos Cachorros</title>";
 echo "</head>";
 echo "<body>";
+echo "<h1>Anny pop's Veiga Dantas </h1>";
 echo "    <h1>Resultados dos Cachorros</h1>";
 echo "    <ul>";
 

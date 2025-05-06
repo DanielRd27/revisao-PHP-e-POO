@@ -32,3 +32,4 @@ for cachorro in cachorros:
 # Exibindo os resultados no terminal
 for cachorro in cachorros:
     cachorro.exibir_status()
+

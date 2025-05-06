@@ -13,7 +13,7 @@ def comer(quantidade_comida):
     return quantidade_comida - 1
 
 def dormir():
-    return True
+    return False
 
 # Usando as funções
 comida_cachorro_1 = comer(comida_cachorro_1)
