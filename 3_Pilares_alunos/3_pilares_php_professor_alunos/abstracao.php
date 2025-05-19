@@ -71,7 +71,6 @@ $rex->treinar();
 // Windows: \r\n
 // Linux/macOS: \n
 // Usar PHP_EOL torna o código mais portável, garantindo que a saída tenha a quebra de linha correta em qualquer sistema operacional.
-
 echo $rex->executarComando("Sentar") . PHP_EOL;
 
 ?>
